@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="lo">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>ຟອມລົງທະບຽນ Esport</title>
   <style>
     body {
@@ -27,7 +27,7 @@
       margin-top: 1rem;
       font-weight: bold;
     }
-    input[type="text"] {
+    input[type="text"], input[type="file"] {
       width: 100%;
       padding: 0.6rem;
       margin-top: 0.4rem;
@@ -50,68 +50,98 @@
     button:hover {
       background: #00FFF7;
     }
+    .divider {
+      margin: 2rem 0;
+      border-top: 1px solid #444;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>ຟອມລົງທະບຽນ Esport</h1>
+
     <form id="esportForm">
       <label for="teamName">Team Name ຊື່ທີມ*</label>
-      <input type="text" id="teamName" name="teamName" required />
+      <input type="text" id="teamName" name="teamName" required>
 
       <label for="facebook">ຊື່ Facebook ເພື່ອຕິດຕໍ່</label>
-      <input type="text" id="facebook" name="facebook" />
+      <input type="text" id="facebook" name="facebook">
 
-      <!-- Player 1 -->
-      <label for="player1Name">Player 1 – Real Name</label>
-      <input type="text" id="player1Name" name="player1Name" />
-      <label for="player1GameName">Player 1 – In‑Game Name</label>
-      <input type="text" id="player1GameName" name="player1GameName" />
-      <label for="player1GameID">Player 1 – Game ID</label>
-      <input type="text" id="player1GameID" name="player1GameID" />
+      <!-- Player Info Sections -->
+      <div class="divider"></div>
+      <label>Player 1</label>
+      <input type="text" name="player1Name" placeholder="Real Name">
+      <input type="text" name="player1GameName" placeholder="In-Game Name">
+      <input type="text" name="player1GameID" placeholder="Game ID">
 
-      <!-- Add more players similarly -->
+      <div class="divider"></div>
+      <label>Player 2</label>
+      <input type="text" name="player2Name" placeholder="Real Name">
+      <input type="text" name="player2GameName" placeholder="In-Game Name">
+      <input type="text" name="player2GameID" placeholder="Game ID">
+
+      <div class="divider"></div>
+      <label>Player 3</label>
+      <input type="text" name="player3Name" placeholder="Real Name">
+      <input type="text" name="player3GameName" placeholder="In-Game Name">
+      <input type="text" name="player3GameID" placeholder="Game ID">
+
+      <div class="divider"></div>
+      <label>Player 4</label>
+      <input type="text" name="player4Name" placeholder="Real Name">
+      <input type="text" name="player4GameName" placeholder="In-Game Name">
+      <input type="text" name="player4GameID" placeholder="Game ID">
+
+      <div class="divider"></div>
+      <label>Player 5</label>
+      <input type="text" name="player5Name" placeholder="Real Name">
+      <input type="text" name="player5GameName" placeholder="In-Game Name">
+      <input type="text" name="player5GameID" placeholder="Game ID">
+
+      <div class="divider"></div>
+      <label>Player 6</label>
+      <input type="text" name="player6Name" placeholder="Real Name">
+      <input type="text" name="player6GameName" placeholder="In-Game Name">
+      <input type="text" name="player6GameID" placeholder="Game ID">
 
       <button type="submit">ລົງທະບຽນ Submit</button>
     </form>
-
-    <p id="responseMessage" style="margin-top:1rem;"></p>
   </div>
 
   <script>
-    document.getElementById('esportForm').addEventListener('submit', function(e) {
+    document.getElementById('esportForm').addEventListener('submit', function (e) {
       e.preventDefault();
 
-      const formData = {
-        teamName: this.teamName.value.trim(),
-        facebook: this.facebook.value.trim(),
-        player1Name: this.player1Name.value.trim(),
-        player1GameName: this.player1GameName.value.trim(),
-        player1GameID: this.player1GameID.value.trim(),
-        // Add other players' data here similarly
-      };
+      const form = e.target;
+      const data = {};
 
-      fetch('https://script.google.com/macros/s/AKfycbzWxGXiQloWd98P3I2w7Br1E1Lm-mxO7DpIJ5h2lsvct7xX62nvJ78DbDQL6ayXPa1Qwg/exec', {
-        method: 'POST',
-        mode: 'cors',
+      Array.from(form.elements).forEach(el => {
+        if (el.name) {
+          data[el.name] = el.value;
+        }
+      });
+
+      fetch("https://script.google.com/macros/s/AKfycbwn8PJb_2Mxmr6Zf8FL5NRBoGVIvZk9bb5PTggbgi-5S0bxN-swrdHMbI7kpmlDmDm-/exec", {
+        method: "POST",
+        body: JSON.stringify(data),
         headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
+          "Content-Type": "application/json"
+        }
       })
-      .then(response => response.text())
-      .then(text => {
-        document.getElementById('responseMessage').textContent = text === "Success" ? "ລົງທະບຽນສຳເລັດ!" : "ມີບັນຫາ: " + text;
-        if(text === "Success") this.reset();
+      .then(res => res.text())
+      .then(txt => {
+        alert("Success: " + txt);
+        form.reset();
       })
       .catch(err => {
+        alert("Error: " + err);
         console.error(err);
-        document.getElementById('responseMessage').textContent = "Error: " + err.message;
       });
     });
   </script>
 </body>
 </html>
+
 
 
 
