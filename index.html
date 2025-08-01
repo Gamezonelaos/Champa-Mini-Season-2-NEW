@@ -21,21 +21,11 @@
       text-align: center;
       color: #FFD600;
       margin-bottom: 1.5rem;
-      font-size: 2rem;
-    }
-    h2 {
-      color: #00FFF7;
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
-      font-size: 1.3rem;
-      border-bottom: 1px solid #444;
-      padding-bottom: 0.3rem;
     }
     label {
       display: block;
       margin-top: 1rem;
       font-weight: bold;
-      font-size: 1rem;
     }
     input[type="text"], input[type="file"] {
       width: 100%;
@@ -45,7 +35,6 @@
       border-radius: 5px;
       background: #2e2e2e;
       color: white;
-      font-size: 1rem;
     }
     button {
       margin-top: 2rem;
@@ -57,44 +46,14 @@
       border-radius: 5px;
       font-size: 1.1rem;
       cursor: pointer;
-      transition: background 0.3s ease;
     }
     button:hover {
       background: #00FFF7;
     }
     .player-block {
-      margin-top: 2rem;
-    }
-
-    /* Responsive for mobile */
-    @media (max-width: 600px) {
-      body {
-        padding: 15px;
-      }
-      .container {
-        padding: 1rem;
-        border-radius: 5px;
-      }
-      h1 {
-        font-size: 1.8rem;
-      }
-      h2 {
-        font-size: 1.1rem;
-        margin-top: 1.5rem;
-      }
-      label {
-        font-size: 0.9rem;
-      }
-      input[type="text"], input[type="file"], button {
-        font-size: 1rem;
-        padding: 0.5rem;
-      }
-      button {
-        margin-top: 1.5rem;
-      }
-      .player-block {
-        margin-top: 1.5rem;
-      }
+      border-bottom: 1px solid #444;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
@@ -102,7 +61,8 @@
   <div class="container">
     <h1>ຟອມລົງທະບຽນ Esport</h1>
 
-    <form action="#" method="POST" enctype="multipart/form-data">
+    <form action="https://script.google.com/macros/s/AKfycbxRJ3TH1gbwjTQRZQ9yuc83LVT1ql1VaRXR7XaByEteRF5cO7inn1OUD27UfU5jMYCuGg/exec" method="POST" enctype="multipart/form-data">
+      
       <label for="teamName">Team Name ຊື່ທີມ*</label>
       <input type="text" id="teamName" name="teamName" required />
 
@@ -114,79 +74,73 @@
 
       <!-- Player 1 -->
       <div class="player-block">
-        <h2>Player 1</h2>
-        <label for="player1Name">Real Name</label>
+        <label for="player1Name">Player 1 – Real Name</label>
         <input type="text" id="player1Name" name="player1Name" />
 
-        <label for="player1GameName">In‑Game Name</label>
+        <label for="player1GameName">Player 1 – In‑Game Name</label>
         <input type="text" id="player1GameName" name="player1GameName" />
 
-        <label for="player1GameID">Game ID</label>
+        <label for="player1GameID">Player 1 – Game ID</label>
         <input type="text" id="player1GameID" name="player1GameID" />
       </div>
 
       <!-- Player 2 -->
       <div class="player-block">
-        <h2>Player 2</h2>
-        <label for="player2Name">Real Name</label>
+        <label for="player2Name">Player 2 – Real Name</label>
         <input type="text" id="player2Name" name="player2Name" />
 
-        <label for="player2GameName">In‑Game Name</label>
+        <label for="player2GameName">Player 2 – In‑Game Name</label>
         <input type="text" id="player2GameName" name="player2GameName" />
 
-        <label for="player2GameID">Game ID</label>
+        <label for="player2GameID">Player 2 – Game ID</label>
         <input type="text" id="player2GameID" name="player2GameID" />
       </div>
 
       <!-- Player 3 -->
       <div class="player-block">
-        <h2>Player 3</h2>
-        <label for="player3Name">Real Name</label>
+        <label for="player3Name">Player 3 – Real Name</label>
         <input type="text" id="player3Name" name="player3Name" />
 
-        <label for="player3GameName">In‑Game Name</label>
+        <label for="player3GameName">Player 3 – In‑Game Name</label>
         <input type="text" id="player3GameName" name="player3GameName" />
 
-        <label for="player3GameID">Game ID</label>
+        <label for="player3GameID">Player 3 – Game ID</label>
         <input type="text" id="player3GameID" name="player3GameID" />
       </div>
 
       <!-- Player 4 -->
       <div class="player-block">
-        <h2>Player 4</h2>
-        <label for="player4Name">Real Name</label>
+        <label for="player4Name">Player 4 – Real Name</label>
         <input type="text" id="player4Name" name="player4Name" />
 
-        <label for="player4GameName">In‑Game Name</label>
+        <label for="player4GameName">Player 4 – In‑Game Name</label>
         <input type="text" id="player4GameName" name="player4GameName" />
 
-        <label for="player4GameID">Game ID</label>
+        <label for="player4GameID">Player 4 – Game ID</label>
         <input type="text" id="player4GameID" name="player4GameID" />
       </div>
 
       <!-- Player 5 -->
       <div class="player-block">
-        <h2>Player 5</h2>
-        <label for="player5Name">Real Name</label>
+        <label for="player5Name">Player 5 – Real Name</label>
         <input type="text" id="player5Name" name="player5Name" />
 
-        <label for="player5GameName">In‑Game Name</label>
+        <label for="player5GameName">Player 5 – In‑Game Name</label>
         <input type="text" id="player5GameName" name="player5GameName" />
 
-        <label for="player5GameID">Game ID</label>
+        <label for="player5GameID">Player 5 – Game ID</label>
         <input type="text" id="player5GameID" name="player5GameID" />
       </div>
 
       <!-- Player 6 -->
       <div class="player-block">
-        <h2>Player 6</h2>
-        <label for="player6Name">Real Name</label>
+        <label for="player6Name">Player 6 – Real Name</label>
         <input type="text" id="player6Name" name="player6Name" />
 
-        <label for="player6GameName">In‑Game Name</label>
+        <label for="player6GameName">Player 6 – In‑Game Name</label>
         <input type="text" id="player6GameName" name="player6GameName" />
 
-        <label for="player6GameID">Game ID</label>
+        <label for="player6GameID">Player 6 – Game ID</label>
         <input type="text" id="player6GameID" name="player6GameID" />
       </div>
 
