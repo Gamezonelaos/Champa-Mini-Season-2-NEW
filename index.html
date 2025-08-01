@@ -1,19 +1,117 @@
 <!DOCTYPE html>
-<html>
-<head><title>Test Fetch</title></head>
+<html lang="lo">
+<head>
+  <meta charset="UTF-8" />
+  <title>ຟອມລົງທະບຽນ Esport</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #13151a;
+      color: #fff;
+      padding: 30px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #1F1F1F;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+    h1 {
+      text-align: center;
+      color: #FFD600;
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.4rem;
+      border: none;
+      border-radius: 5px;
+      background: #2e2e2e;
+      color: white;
+    }
+    button {
+      margin-top: 2rem;
+      width: 100%;
+      padding: 1rem;
+      background: #FFD600;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #00FFF7;
+    }
+  </style>
+</head>
 <body>
-  <button id="test">Send Test</button>
+  <div class="container">
+    <h1>ຟອມລົງທະບຽນ Esport</h1>
+    <form id="esportForm">
+      <label for="teamName">Team Name ຊື່ທີມ*</label>
+      <input type="text" id="teamName" name="teamName" required />
+
+      <label for="facebook">ຊື່ Facebook ເພື່ອຕິດຕໍ່</label>
+      <input type="text" id="facebook" name="facebook" />
+
+      <!-- Player 1 -->
+      <label for="player1Name">Player 1 – Real Name</label>
+      <input type="text" id="player1Name" name="player1Name" />
+      <label for="player1GameName">Player 1 – In‑Game Name</label>
+      <input type="text" id="player1GameName" name="player1GameName" />
+      <label for="player1GameID">Player 1 – Game ID</label>
+      <input type="text" id="player1GameID" name="player1GameID" />
+
+      <!-- Add more players similarly -->
+
+      <button type="submit">ລົງທະບຽນ Submit</button>
+    </form>
+
+    <p id="responseMessage" style="margin-top:1rem;"></p>
+  </div>
+
   <script>
-    document.getElementById('test').addEventListener('click', () => {
-      fetch('https://script.google.com/macros/s/AKfycbzlotkMQu0jTldQtPL2bGh1GjZj7YHpTC-nsOpVxaoM1PCw8aM9MtxqCBHYCd1bxB_M0A/exec', {
+    document.getElementById('esportForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = {
+        teamName: this.teamName.value.trim(),
+        facebook: this.facebook.value.trim(),
+        player1Name: this.player1Name.value.trim(),
+        player1GameName: this.player1GameName.value.trim(),
+        player1GameID: this.player1GameID.value.trim(),
+        // Add other players' data here similarly
+      };
+
+      fetch('https://script.google.com/macros/s/AKfycbzWxGXiQloWd98P3I2w7Br1E1Lm-mxO7DpIJ5h2lsvct7xX62nvJ78DbDQL6ayXPa1Qwg/exec', {
         method: 'POST',
-        body: JSON.stringify({test: 'hello'}),
-        headers: {'Content-Type': 'application/json'}
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
       })
-      .then(r => r.text()).then(console.log).catch(console.error);
+      .then(response => response.text())
+      .then(text => {
+        document.getElementById('responseMessage').textContent = text === "Success" ? "ລົງທະບຽນສຳເລັດ!" : "ມີບັນຫາ: " + text;
+        if(text === "Success") this.reset();
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById('responseMessage').textContent = "Error: " + err.message;
+      });
     });
   </script>
 </body>
 </html>
+
 
 
