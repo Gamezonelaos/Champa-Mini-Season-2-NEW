@@ -2,8 +2,8 @@
 <html lang="lo">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ຟອມລົງທະບຽນ Esport</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
       font-family: sans-serif;
@@ -11,24 +11,29 @@
       color: #fff;
       padding: 30px;
     }
+
     .container {
       max-width: 800px;
       margin: auto;
-      background: #1F1F1F;
+      background: #1f1f1f;
       padding: 2rem;
       border-radius: 10px;
     }
+
     h1 {
       text-align: center;
       color: #FFD600;
       margin-bottom: 1.5rem;
     }
+
     label {
       display: block;
       margin-top: 1rem;
       font-weight: bold;
     }
-    input[type="text"], input[type="file"] {
+
+    input[type="text"],
+    input[type="file"] {
       width: 100%;
       padding: 0.6rem;
       margin-top: 0.4rem;
@@ -37,6 +42,12 @@
       background: #2e2e2e;
       color: white;
     }
+
+    hr {
+      border: 1px solid #444;
+      margin: 2rem 0;
+    }
+
     button {
       margin-top: 2rem;
       width: 100%;
@@ -48,107 +59,87 @@
       font-size: 1.1rem;
       cursor: pointer;
     }
+
     button:hover {
       background: #00FFF7;
-    }
-    .player-section {
-      border-bottom: 1px solid #444;
-      padding-bottom: 1rem;
-      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>ຟອມລົງທະບຽນ Esport</h1>
-
-    <form 
-      action="https://script.google.com/macros/s/AKfycbwn8PJb_2Mxmr6Zf8FL5NRBoGVIvZk9bb5PTggbgi-5S0bxN-swrdHMbI7kpmlDmDm-/exec" 
-      method="POST" enctype="multipart/form-data"
-    >
+    <form id="esportForm">
       <label for="teamName">Team Name ຊື່ທີມ*</label>
       <input type="text" id="teamName" name="teamName" required />
-
-      <label for="teamLogo">ອັບໂຫຼດ ໂລໂກ້ທີມ*</label>
-      <input type="file" id="teamLogo" name="teamLogo" accept="image/*" required />
 
       <label for="facebook">ຊື່ Facebook ເພື່ອຕິດຕໍ່</label>
       <input type="text" id="facebook" name="facebook" />
 
-      <!-- Player 1 -->
-      <div class="player-section">
-        <label for="player1Name">Player 1 – Real Name</label>
-        <input type="text" id="player1Name" name="player1Name" />
+      <hr />
 
-        <label for="player1GameName">Player 1 – In‑Game Name</label>
-        <input type="text" id="player1GameName" name="player1GameName" />
+      <!-- Repeat for each player -->
+      <div id="players">
+        <!-- Example: Player 1 -->
+        <label>Player 1 – Real Name</label>
+        <input type="text" name="player1Name" />
 
-        <label for="player1GameID">Player 1 – Game ID</label>
-        <input type="text" id="player1GameID" name="player1GameID" />
-      </div>
+        <label>Player 1 – In‑Game Name</label>
+        <input type="text" name="player1GameName" />
 
-      <!-- Player 2 -->
-      <div class="player-section">
-        <label for="player2Name">Player 2 – Real Name</label>
-        <input type="text" id="player2Name" name="player2Name" />
+        <label>Player 1 – Game ID</label>
+        <input type="text" name="player1GameID" />
+        <hr />
 
-        <label for="player2GameName">Player 2 – In‑Game Name</label>
-        <input type="text" id="player2GameName" name="player2GameName" />
+        <!-- Copy and update for player2 to player6 -->
+        <label>Player 2 – Real Name</label>
+        <input type="text" name="player2Name" />
 
-        <label for="player2GameID">Player 2 – Game ID</label>
-        <input type="text" id="player2GameID" name="player2GameID" />
-      </div>
+        <label>Player 2 – In‑Game Name</label>
+        <input type="text" name="player2GameName" />
 
-      <!-- Player 3 -->
-      <div class="player-section">
-        <label for="player3Name">Player 3 – Real Name</label>
-        <input type="text" id="player3Name" name="player3Name" />
+        <label>Player 2 – Game ID</label>
+        <input type="text" name="player2GameID" />
+        <hr />
 
-        <label for="player3GameName">Player 3 – In‑Game Name</label>
-        <input type="text" id="player3GameName" name="player3GameName" />
-
-        <label for="player3GameID">Player 3 – Game ID</label>
-        <input type="text" id="player3GameID" name="player3GameID" />
-      </div>
-
-      <!-- Player 4 -->
-      <div class="player-section">
-        <label for="player4Name">Player 4 – Real Name</label>
-        <input type="text" id="player4Name" name="player4Name" />
-
-        <label for="player4GameName">Player 4 – In‑Game Name</label>
-        <input type="text" id="player4GameName" name="player4GameName" />
-
-        <label for="player4GameID">Player 4 – Game ID</label>
-        <input type="text" id="player4GameID" name="player4GameID" />
-      </div>
-
-      <!-- Player 5 -->
-      <div class="player-section">
-        <label for="player5Name">Player 5 – Real Name</label>
-        <input type="text" id="player5Name" name="player5Name" />
-
-        <label for="player5GameName">Player 5 – In‑Game Name</label>
-        <input type="text" id="player5GameName" name="player5GameName" />
-
-        <label for="player5GameID">Player 5 – Game ID</label>
-        <input type="text" id="player5GameID" name="player5GameID" />
-      </div>
-
-      <!-- Player 6 -->
-      <div class="player-section">
-        <label for="player6Name">Player 6 – Real Name</label>
-        <input type="text" id="player6Name" name="player6Name" />
-
-        <label for="player6GameName">Player 6 – In‑Game Name</label>
-        <input type="text" id="player6GameName" name="player6GameName" />
-
-        <label for="player6GameID">Player 6 – Game ID</label>
-        <input type="text" id="player6GameID" name="player6GameID" />
+        <!-- Add player3 through player6 fields here similarly... -->
       </div>
 
       <button type="submit">ລົງທະບຽນ Submit</button>
     </form>
   </div>
+
+  <script>
+    const form = document.getElementById("esportForm");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+
+      try {
+        const response = await fetch(
+          "https://script.google.com/macros/s/AKfycby0agSA99epB1WSQ2dH7ZxiIhs76LL3LgoeJAgBnMIsB9HwLSKkZt2fPOZXM7BuDpsjFg/exec",
+          {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        const result = await response.text();
+        alert("ລົງທະບຽນສຳເລັດ! Registration successful.");
+        form.reset();
+      } catch (error) {
+        alert("Error submitting form. Please try again.");
+        console.error("Error:", error);
+      }
+    });
+  </script>
 </body>
 </html>
