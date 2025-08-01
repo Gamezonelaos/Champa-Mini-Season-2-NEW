@@ -1,113 +1,4 @@
-<!DOCTYPE html>
-<html lang="lo">
-<head>
-  <meta charset="UTF-8">
-  <title>ຟອມລົງທະບຽນ Esport</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0f1115;
-      color: #fff;
-      padding: 30px;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      background: #1F1F1F;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-    }
-
-    h1 {
-      text-align: center;
-      color: #FFD600;
-      margin-bottom: 2rem;
-    }
-
-    label {
-      font-weight: bold;
-      margin-top: 1rem;
-      display: block;
-    }
-
-    input[type="text"] {
-      width: 100%;
-      padding: 0.75rem;
-      margin-top: 0.4rem;
-      margin-bottom: 1rem;
-      border: none;
-      border-radius: 8px;
-      background: #2a2d33;
-      color: white;
-    }
-
-    .collapsible {
-      background-color: #2e2e2e;
-      color: #FFD600;
-      cursor: pointer;
-      padding: 1rem;
-      width: 100%;
-      text-align: left;
-      border: none;
-      outline: none;
-      font-size: 1.1rem;
-      margin-top: 1.5rem;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
-    }
-
-    .collapsible:hover {
-      background-color: #3b3b3b;
-    }
-
-    .content {
-      padding: 0 1rem;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease-out;
-      background-color: #1a1a1a;
-      border-radius: 8px;
-      margin-top: 0.5rem;
-    }
-
-    .content.open {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      max-height: 1000px;
-    }
-
-    button[type="submit"] {
-      margin-top: 2rem;
-      width: 100%;
-      padding: 1rem;
-      background: #FFD600;
-      color: #000;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button[type="submit"]:hover {
-      background: #00FFF7;
-    }
-
-    @media (max-width: 600px) {
-      input[type="text"] {
-        font-size: 1rem;
-      }
-      .collapsible {
-        font-size: 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
+<div class="container">
     <h1>ຟອມລົງທະບຽນ Esport</h1>
 
     <form id="esportForm">
@@ -121,43 +12,43 @@
       <input type="text" id="logoLink" name="logoLink" placeholder="https://..." required>
 
       <!-- Player Sections -->
-      <button type="button" class="collapsible active">ຜູ້ຫຼິ້ນ 1 *</button>
+      <button type="button" class="collapsible">ຜູ້ຫຼິ້ນ 1 <span class="chevron">▶</span></button>
       <div class="content open">
         <input type="text" name="player1Name" placeholder="ຊື່ຈິງ *" required>
         <input type="text" name="player1GameName" placeholder="ຊື່ໃນເກມ *" required>
         <input type="text" name="player1GameID" placeholder="Game ID *" required>
       </div>
 
-      <!-- Repeat for other players -->
-      <button type="button" class="collapsible">ຜູ້ຫຼິ້ນ 2</button>
+      <!-- Repeat for players 2-6 -->
+      <button type="button" class="collapsible">ຜູ້ຫຼິ້ນ 2 <span class="chevron">▶</span></button>
       <div class="content">
         <input type="text" name="player2Name" placeholder="ຊື່ຈິງ">
         <input type="text" name="player2GameName" placeholder="ຊື່ໃນເກມ">
         <input type="text" name="player2GameID" placeholder="Game ID">
       </div>
 
-      <button type="button" class="collapsible">ຜູ້ຫຼິ້ນ 3</button>
+      <button type="button" class="collapsible">ຜູ້ຫຼິ້ນ 3 <span class="chevron">▶</span></button>
       <div class="content">
         <input type="text" name="player3Name" placeholder="ຊື່ຈິງ">
         <input type="text" name="player3GameName" placeholder="ຊື່ໃນເກມ">
         <input type="text" name="player3GameID" placeholder="Game ID">
       </div>
 
-      <button type="button" class="collapsible">ຜູ້ຫຼິ້ນ 4</button>
+      <button type="button" class="collapsible">ຜູ້ຫຼິ້ນ 4 <span class="chevron">▶</span></button>
       <div class="content">
         <input type="text" name="player4Name" placeholder="ຊື່ຈິງ">
         <input type="text" name="player4GameName" placeholder="ຊື່ໃນເກມ">
         <input type="text" name="player4GameID" placeholder="Game ID">
       </div>
 
-      <button type="button" class="collapsible">ຜູ້ຫຼິ້ນ 5</button>
+      <button type="button" class="collapsible">ຜູ້ຫຼິ້ນ 5 <span class="chevron">▶</span></button>
       <div class="content">
         <input type="text" name="player5Name" placeholder="ຊື່ຈິງ">
         <input type="text" name="player5GameName" placeholder="ຊື່ໃນເກມ">
         <input type="text" name="player5GameID" placeholder="Game ID">
       </div>
 
-      <button type="button" class="collapsible">ຜູ້ຫຼິ້ນ 6</button>
+      <button type="button" class="collapsible">ຜູ້ຫຼິ້ນ 6 <span class="chevron">▶</span></button>
       <div class="content">
         <input type="text" name="player6Name" placeholder="ຊື່ຈິງ">
         <input type="text" name="player6GameName" placeholder="ຊື່ໃນເກມ">
@@ -167,56 +58,6 @@
       <button type="submit" id="submitBtn">ລົງທະບຽນ Submit</button>
     </form>
   </div>
-
-  <script>
-    // Collapsible toggle logic
-    document.querySelectorAll(".collapsible").forEach((btn, i) => {
-      btn.addEventListener("click", () => {
-        const content = btn.nextElementSibling;
-        content.classList.toggle("open");
-      });
-    });
-
-    // Submit logic
-    document.getElementById('esportForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const form = e.target;
-      const button = document.getElementById('submitBtn');
-      button.disabled = true;
-      button.textContent = "ກຳລັງສົ່ງ...";
-
-      const data = {};
-      Array.from(form.elements).forEach(el => {
-        if (el.name) {
-          data[el.name] = el.value.trim();
-        }
-      });
-
-      fetch("YOUR_WEB_APP_URL_HERE", { // Replace with your Apps Script URL
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-      .then(res => res.text())
-      .then(txt => {
-        alert("✅ ລົງທະບຽນສຳເລັດ! " + txt);
-        form.reset();
-        button.disabled = false;
-        button.textContent = "ລົງທະບຽນ Submit";
-      })
-      .catch(err => {
-        alert("❌ ເກີດຂໍ້ຜິດພາດ: ກະລຸນາລອງໃໝ່.");
-        console.error(err);
-        button.disabled = false;
-        button.textContent = "ລົງທະບຽນ Submit";
-      });
-    });
-  </script>
-</body>
-</html>
-
 
 
 
